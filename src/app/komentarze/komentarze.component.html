@@ -1,0 +1,39 @@
+
+<br><br>
+<p><b> wpisz swój anonimowy komentarz :) </b> </p>
+<div>
+
+<textarea input [(ngModel)] = "newTask"  cols="50" rows="10"></textarea><br>
+<button (click)="add()">Dodaj komentarz</button>
+
+
+
+</div>
+
+
+<div class="container">
+<div>
+  <ng-container *ngIf="tasksList.length > 0;else noTask">
+
+  <ul>
+  <li *ngFor="let task of tasksList;index as i">
+
+   <p><b> KOMENTARZ NR.{{i+1}}: </b><b><span style="color: rgb(187, 19, 19)"> {{task}}</span></b> </p>
+  <button (click)="remove(task)">usuń</button>
+
+  </li>
+  </ul>
+
+
+</ng-container>
+  <ng-template #noTask>
+    <p>Brak komentarzy</p>
+  </ng-template>
+  <a mat-raised-button class="button" routerLink="/">Powrót do strony głównej</a>
+</div>
+
+
+
+
+
+

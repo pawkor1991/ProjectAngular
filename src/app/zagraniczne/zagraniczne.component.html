@@ -1,0 +1,25 @@
+
+<router-outlet></router-outlet>
+
+
+  <div *ngFor ="let klub of kluby;let i = index">
+    <mat-list>
+      <mat-list-item class="h1">  {{klub.name}}</mat-list-item>
+
+      <mat-list-item class="h3">wartość rynkowa klubu : {{klub.value + klub.currency}}</mat-list-item>
+
+      <mat-list-item class="h2">{{klub.description}}</mat-list-item><br>
+
+      <img mat-card-image class="img" src="../..//assets/{{klub.image}}" alt="logo">
+      <mat-divider class="mat-divider"></mat-divider>
+
+    </mat-list>
+  </div>
+
+
+
+    <a mat-raised-button class="button" href="https://www.sport.tvp.pl/53265747/forbes-top-20-najbardziej-wartosciowych-klubow-pilkarskich/" target="_blank">Więcej informacji</a>
+
+    <a mat-raised-button class="button" routerLink="/">Powrót do strony głównej</a>
+
+<app-wiadomosc></app-wiadomosc>
